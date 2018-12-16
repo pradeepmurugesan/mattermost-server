@@ -38,7 +38,10 @@ steps:
   displayName: 'Get dependencies'
   
 - script: |
+    echo '====================='
+    echo $(pwd)
+    echo '====================='    
     make check-style  
     continueOnError: 'true'
     workingDirectory: '$(modulePath)'
-    displayName: 'Check-Style'
+    displayName: 'Check Style'
