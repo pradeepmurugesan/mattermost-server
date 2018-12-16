@@ -38,7 +38,7 @@ steps:
   displayName: 'Get dependencies'
   
 - script: |
-  make check-style  
-  continueOnError: 'true'
-  workingDirectory: '$(modulePath)'
-  displayName: 'Check-Style'
+    make check-style  
+    continueOnError: 'true'
+    workingDirectory: '$(modulePath)'
+    displayName: 'Check-Style'
