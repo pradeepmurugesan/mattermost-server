@@ -42,6 +42,5 @@ steps:
     echo $(pwd)
     echo '====================='    
     make check-style  
-    continueOnError: 'true'
-    workingDirectory: '$(modulePath)'
-    displayName: 'Check Style'
+  workingDirectory: '$(modulePath)'
+  displayName: 'Check Style'
