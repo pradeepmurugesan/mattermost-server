@@ -37,10 +37,11 @@ steps:
   workingDirectory: '$(modulePath)'
   displayName: 'Get dependencies'
   
-- script: |
-    echo '====================='
-    echo $(pwd)
-    echo '====================='    
+- script: |   
     make check-style  
   workingDirectory: '$(modulePath)'
   displayName: 'Check Style'
+- script: |   
+    make test-server  
+  workingDirectory: '$(modulePath)'
+  displayName: 'Test Server'
