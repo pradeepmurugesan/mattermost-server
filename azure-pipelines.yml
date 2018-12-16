@@ -10,10 +10,14 @@ variables:
   GOBIN:  '$(GOPATH)/bin' # Go binaries path
   GOROOT: '/usr/local/go1.11' # Go installation path
   GOPATH: '$(system.defaultWorkingDirectory)/gopath' # Go workspace path
+  IS_CI: 'true'
   modulePath: '$(GOPATH)/src/github.com/$(build.repository.name)' # Path to the module's code
 
 steps:
 - script: |
+    echo '======'
+    echo $IS_CI
+    echo '======'
     mkdir -p '$(GOBIN)'
     mkdir -p '$(GOPATH)/pkg'
     mkdir -p '$(modulePath)'
@@ -41,7 +45,8 @@ steps:
     make check-style  
   workingDirectory: '$(modulePath)'
   displayName: 'Check Style'
-- script: |   
+- script: |
+    echo $IS_CI
     make test-server  
   workingDirectory: '$(modulePath)'
   displayName: 'Test Server'
